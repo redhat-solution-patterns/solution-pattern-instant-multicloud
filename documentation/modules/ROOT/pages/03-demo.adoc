@@ -10,25 +10,15 @@
 Include here content related to potential existing demos: blogs, articles, recorded videos, walkthrough guides, tutorials.
 
 [#demo-video]
-=== Watch a demonstration
 
-In this video you can see xpto:
+=== Slides:
 
-video::3yULVMdqJ98[youtube, width=800, height=480]
+* https://docs.google.com/presentation/d/12aToy7n-gk0pbd3o9nW6hyFvFgTrb9jviiorAkrdOoI[Instant Mullti Cloud - how to make it happen]
 
-Next, you can learn how to walkthrough this demo.
+* https://docs.google.com/presentation/d/1Y05a6SlSNv-Zi_gITJU970_rxS2BmXm1a4smDRS1HkY/edit#slide=id.g23ad52f5b23_0_1296[Instant Multi Cloud - Openshift Everywhere]
 
-== Run the demonstration
+* https://drive.google.com/file/d/1ZbWMjKIKbPh7UFTHftKcEC1NUFXMClZn/view[Architecture video]
 
-=== Before getting started
-To run this demo, you will need xpto. Adding to that, make sure to have:
+=== Live Presentation video:
 
-* ABC
-* XYZ
-* XPTO
-
-=== Installing the demo
-Installation guide and basic test of the demo installation if needed
-
-=== Walkthrough guide
-How to run through the demo
+video::ZDKCCqkDAqk[youtube, width=800, height=480]

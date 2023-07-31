@@ -5,9 +5,85 @@
 
 = Workshop
 
-what is this workshop and what will be learned
+In the workshop, we will be deploying an application OsToy to managed openshift clusters running in AWS, Azure and GCP.
 
 == Installing the workshop environment
-=== Before getting started
-=== Installing the environment
+
+* Login to https://demo.redhat.com/catalog and create the ROSA and ARO openshift clusters:
+
+- Two Red Hat Openshift Service on AWS (ROSA) clusters(one for dev and second for prod) using this link https://demo.redhat.com/catalog?search=aws&item=babylon-catalog-prod%2Fsandboxes-gpte.rosa.prod[ROSA]
+- Azure Red Hat Openshift (ARO) using this link https://demo.redhat.com/catalog?search=aro&item=babylon-catalog-prod%2Fazure-gpte.open-environment-azure-aro4.prod[ARO]
+- Openshift Dedicated on GCP by following this https://youtu.be/AI4WwSZJi9g[video].
+
 == Delivering the workshop
+
+- Fork this repo using workshop branch: https://github.com/gmidha1/ostoy/tree/workshop[Repository link] 
+- Once forked, go to your repo in Github UI and go to Settings → Security → Secrets and Variables → Actions.
+
+[link=wkshp_secrets.png, window="_blank"]
+image::wkshp_secrets.png[width=100%]
+
+- Under Secrets, click on the “New repository secret” button to create a secret. We will be creating the following secrets which will be used by our workflow to access and deploy our applications:
+
+* ROSA_SERVER: API server url for ROSA cluster.
+* ROSA_TOKEN: Token for ROSA cluster.
+* ARO_SERVER: API server url for ARO cluster.
+* ARO_TOKEN: Token for ARO cluster.
+* GCP_SERVER: API server url for GCP cluster.
+* GCP_TOKEN: Token for GCP cluster.
+* ROSA_SERVER_PROD: API server url for ROSA PROD cluster.
+* ROSA_TOKEN: Token for ROSA PROD cluster.
+* QUAY_TOKEN: Token for pushing and pulling container images to Quay container registry.
+
+[link=wkshp_secrets2.png, window="_blank"]
+image::wkshp_secrets2.png[width=100%]
+
+- Go to Settings → Security → Secrets and Variables → Actions → Variables tab. We will be creating variables that will control the flow of the workflow:
+* ARO_LIVE: if set to true, it will deploy the application to the ARO cluster.
+* GCP_LIVE: if set to true, it will deploy the application to the GCP cluster.
+* ROSA_LIVE: if set to true, it will deploy the application to the ROSA DEV cluster.
+* ROSA_PROD: if set to true, it will deploy the application to the ROSA PROD cluster.
+
+[link=wkshp_vars.png, window="_blank"]
+image::wkshp_vars.png[width=100%]
+
+- Now let us go through the contents of the workflow file: .github/workflows/openshift.yml. Workflow is divided into the following stages:
+	1. Build and Push to Quay: This stage will build the container image from source code and push to container registry Quay.
+	2. ROSA deployment Dev: This stage deploys the application to the Dev ROSA environment/cluster.
+	3. ROSA deployment PROD: This stage deploys the application to PROD ROSA environment/cluster.
+	4. ARO deployment: This stage deploys the application to the ARO environment/cluster.
+	5. GCP deployment: This stage deploys the application to the OSD GCP Openshift cluster.
+
+- As our workflow is ready, we can go to the Actions tab in GitHub UI and start the workflow using the workshop branch.
+
+- Once completed, the workflow UI will show the completed stages in green as shown below. We can expand the steps in the stage and check the logs for it.
+
+[link=wkshp_run1.png, window="_blank"]
+image::wkshp_run1.png[width=100%]
+
+[link=wkshp_run2.png, window="_blank"]
+image::wkshp_run2.png[width=100%]
+
+- Now we can browse the application by using the respective cloud’s Openshift console → Networking → Route → search for ostoy and open the ostoy route url.
+* ARO console UI:
++
+[link=wkshp_aro_console.png, window="_blank"]
+image::wkshp_aro_console.png[width=100%]
++
+* ARO - Ostoy application UI:
+
+[link=wkshp_aro_ostoy.png, window="_blank"]
+image::wkshp_aro_ostoy.png[width=100%]
+
+* Similarly we will access the OSToy application from Openshift clusters running in GCP and AWS.
+** GCP - OStoy application UI:
++
+[link=wkshp_gcp_ostoy.png, window="_blank"]
+image::wkshp_gcp_ostoy.png[width=100%]
++
+** ROSA - OStoy application UI:
++
+[link=wkshp_rosa_ostoy.png, window="_blank"]
+image::wkshp_rosa_ostoy.png[width=100%]
+
+* We can use third party Load Balancer Service such as Cloudflare to route the traffic to the application running in one of the clouds. For the end user, it will be seamless access. 

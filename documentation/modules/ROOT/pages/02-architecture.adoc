@@ -5,29 +5,15 @@
 
 = Architecture 
 
-Introduction for the architecture of this solution pattern.
-
-== Common Challenges 
-
-[#tech_stack]
-== Technology Stack
-
-// Change links and text here as you see fit.
-* https://www.redhat.com/en/technologies/cloud-computing/openshift[Red Hat OpenShift]
-* Red Hat Application Foundation
-** https://access.redhat.com/products/quarkus[Quarkus]
-** https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-streams-for-apache-kafka[Kafka Streams]
-* Other:
-** https://www.postgresql.org/[PostgreSQL database]
-** https://helm.sh/[Helm]
-
-
 [#in_depth]
 == An in-depth look at the solution's architecture
 
-Technical description including all or some of the following: architecture ir ed diagrams. In-depth details of the decisions made and solutions used. Description of each service and what it is used for. Description of any integration.
+This solution pattern uses the following components:
 
-[#more_tech]
-== About the Technology Stack
+* GitHub Repository: It contains the application code and we will use GitHub Actions to create a workflow that will deploy the application to Managed Openshift clusters.
+* Red Hat Openshift Service on AWS (ROSA): It is a fully-managed, turnkey application platform that allows you to focus on delivering value to your customers by building and deploying applications. Red Hat and AWS Site reliability engineering (SRE) experts manage the underlying platform so you do not have to worry about the complexity of infrastructure management. ROSA provides seamless integration with a wide range of AWS compute, database, analytics, machine learning, networking, mobile, and other services to further accelerate the building and delivering of differentiating experiences to your customers. We will be using ROSA to deploy our containerized application.
+* Azure Red Hat Openshift (ARO): It is a fully managed Red Hat Openshift service on Azure. It is jointly engineered, operated and supported by Microsoft and Red Hat with an integrated support experience. We will be using ARO to deploy our containerized application.
+* Openshift Dedicated in Google Cloud Platform: Openshift Dedicated is a complete Openshift Container Platform cluster as a cloud service, configured for high availability and dedicated to a single customer. OpenShift Dedicated is professionally managed by Red Hat and hosted on Google Cloud Platform (GCP). Each OpenShift Dedicated cluster comes with a fully managed control plane (Control and Infrastructure nodes), application nodes, installation and management by Red Hat Site Reliability Engineers (SRE), premium Red Hat Support, and cluster services such as logging, metrics, monitoring, notifications portal, and a cluster portal. We will be using OSD in GCP to deploy our containerized application.
 
-If you want to include more details about the tech stack you used, this is the place.
+[link=arch_diagram.png, window="_blank"]
+image::arch_diagram.png[width=100%]

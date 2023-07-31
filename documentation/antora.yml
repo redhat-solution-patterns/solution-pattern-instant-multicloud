@@ -1,5 +1,5 @@
-name: solution-pattern-template
-title: Template Tutorial
+name: solution-pattern-instant-multicloud
+title: Instant Multi Cloud - Openshift Everywhere
 version: master
 nav:
   - modules/ROOT/nav.adoc

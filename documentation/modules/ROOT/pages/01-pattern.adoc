@@ -1,7 +1,26 @@
 == The story behind this solution pattern
 
-A description of the story that was used to build the demo and architectures of this SP.
+Kubernetes is an open-source container orchestration engine for automating deployment, scaling and management of containerized applications. It is being used heavily for production grade applications. Kubernetes clusters are being created and used in public and private clouds. Managed Kubernetes clusters(EKS, AKS, GKE) in hyperscalers provide different integration toolsets, different dev experience (beyond kubectl), different life-cycles, different technologies (OS, kube version, mesh options), and so on. All public clouds provide their own different:
+
+* Development tools.
+* Infrastructure and application deployment approaches.
+* Networking/topologies.
+* Security configuration and compliance.
+* Training and certification.
+
+
+Each Organization’s goals should be:
+
+* Reduce infrastructure complexity by abstracting it.
+* Get a consistent platform on any cloud infrastructure.
+* Use a SRE managed application platform.
+* Consistency - reduce developer and operations overhead.
+* Turnkey - avoid over-investing in your own platform engineering.
+* Take advantage of strong cloud partnerships through Red Hat.
+
+Red Hat has a premium managed Openshift offering in the key hyperscalers such as AWS, Azure & GCP. In this pattern, we will be demonstrating how we can use a CI/CD platform such as GitHub workflows and deploy our applications to Managed Openshift platforms running in the hyperscalers.  
+
 
 == The Solution
 
-This is a summary of the solution
+This solution pattern demonstrates how we can deploy to Multi Cloud - Openshift clusters using a CI/CD pipeline directly from GitHub itself. In the workshop, we will be deploying an application OsToy to managed openshift clusters running in AWS, Azure and GCP.
