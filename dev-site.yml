@@ -13,7 +13,7 @@ content:
       start_path: documentation
 asciidoc:
   attributes:
-    title: "Solution Pattern: Instant Multi Cloud - Openshift Everywhere"
+    title: "Solution Pattern: Instant Multi Cloud - Openshift everywhere"
   extensions:
     - ./lib/remote-include-processor.js
     - ./lib/tab-block.js
