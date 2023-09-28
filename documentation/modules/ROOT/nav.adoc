@@ -1,22 +1,19 @@
 * xref:index.adoc[{counter:module}. Home page]
-** xref:index.adoc#multi-cloud[{module}.{counter:submodule1} What is Multi Cloud]
-** xref:index.adoc#mgd-openshift[{module}.{counter:submodule1} What is Managed Openshift]
-** xref:index.adoc#benefits-mgd-openshift[{module}.{counter:submodule1} What are the benefits of Managed Red Hat Openshift]
-** xref:index.adoc#openshift-offerings[{module}.{counter:submodule1} What are Red Hat Openshift offerings]
-** xref:index.adoc#github-actions[{module}.{counter:submodule1} What is GitHub Actions]
-** xref:01-pattern.adoc#_the_story_behind_this_solution_pattern[{module}.{counter:submodule1} The story behind this solution pattern]
-** xref:01-pattern#_the_solution[{module}.{counter:submodule1} The solution]
-** xref:index.adoc#_content_overview[{module}.{counter:submodule1} Content Overview]
-** xref:index.adoc#_content_overview[{module}.{counter:submodule1} Explore more solution patterns]
+** xref:index.adoc#multi-cloud[{module}.{counter:submodule1} Usecases]
+** xref:index.adoc#story[{module}.{counter:submodule1} The story behind the pattern]
+** xref:index.adoc#solution[{module}.{counter:submodule1} The solution]
 
 * xref:02-architecture.adoc[{counter:module}. Architecture]
 ** xref:02-architecture.adoc#in_depth[{module}.{counter:submodule2}. An in-depth look at the solution's architecture]
+** xref:02-architecture.adoc#_more_about_the_technology_stack[{module}.{counter:submodule2}. More about the technology stack]
 
 * xref:03-demo.adoc[{counter:module}. See the Solution in Action]
 ** xref:03-demo.adoc#_demonstration[{module}.{counter:submodule3}. Demonstration]
 
 * xref:04-workshop.adoc[{counter:module}. Workshop]
 ** xref:04-workshop.adoc#_installing_the_workshop_environment[{module}.{counter:submodule4}. Installing the workshop environment]
-** xref:04-workshop.adoc#deliver_wksp[{module}.{counter:submodule4}. Delivering the workshop]
+** xref:04-workshop.adoc#_delivering_the_workshop[{module}.{counter:submodule4}. Delivering the workshop]
 
-* https://redhat-solution-patterns.github.io/[{counter:module}. Other Red Hat Solution Patterns]
+* xref:05-developer-resources.adoc[{counter:module}. Developer Resources]
+
+* https://redhat-solution-patterns.github.io/solution-patterns/patterns.html[{counter:module}. Other Red Hat Solution Patterns^]

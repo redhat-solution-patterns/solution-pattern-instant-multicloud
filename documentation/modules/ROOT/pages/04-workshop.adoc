@@ -1,15 +1,15 @@
-= Solution Pattern: Name Template
+= Solution Pattern: Instant Multi Cloud
 :sectnums:
 :sectlinks:
 :doctype: book
 
 = Workshop
 
-In the workshop, we will be deploying an application OsToy to managed openshift clusters running in AWS, Azure and GCP.
+In the workshop, we will be deploying an application OsToy to managed OpenShift clusters running in AWS, Azure and GCP.
 
 == Installing the workshop environment
 
-These managed openshift clusters are required for the workshop:
+These managed OpenShift clusters are required for the workshop:
 
 - Two Red Hat Openshift Service on AWS (ROSA) clusters(one for dev and second for prod)
 - One Azure Red Hat Openshift (ARO) cluster
@@ -19,7 +19,7 @@ Once clusters are ready, you can move to "Delivering the workshop" part.
 
 If you are a Red Hatter, you can follow the below steps to get these above clusters created. 
 
-* Login to https://demo.redhat.com/catalog and create the ROSA and ARO openshift clusters:
+* Login to https://demo.redhat.com/catalog and create the ROSA and ARO OpenShift clusters:
 
 - Two Red Hat Openshift Service on AWS (ROSA) clusters(one for dev and second for prod) using this link https://demo.redhat.com/catalog?search=aws&item=babylon-catalog-prod%2Fsandboxes-gpte.rosa.prod[ROSA]
 - Azure Red Hat Openshift (ARO) using this link https://demo.redhat.com/catalog?search=aro&item=babylon-catalog-prod%2Fazure-gpte.open-environment-azure-aro4.prod[ARO]

@@ -1,0 +1,11 @@
+= Solution Pattern: Instant Multi Cloud
+:sectnums:
+:sectlinks:
+:doctype: book
+
+= Developer Resources
+
+* https://www.youtube.com/watch?v=ZDKCCqkDAqk[YouTube video^]
+* Products
+* Topics
+

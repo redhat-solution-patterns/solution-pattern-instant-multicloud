@@ -1,4 +1,4 @@
-= Solution Pattern: Name Template
+= Solution Pattern: Instant Multi Cloud
 :sectnums:
 :sectlinks:
 :doctype: book
@@ -7,10 +7,7 @@
 
 == Demonstration
 
-Include here content related to potential existing demos: blogs, articles, recorded videos, walkthrough guides, tutorials.
-
 [#demo-video]
-
 === Slides:
 
 * https://docs.google.com/presentation/d/12aToy7n-gk0pbd3o9nW6hyFvFgTrb9jviiorAkrdOoI[Instant Mullti Cloud - how to make it happen]

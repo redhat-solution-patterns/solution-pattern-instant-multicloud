@@ -4,34 +4,65 @@
 :sectlinks:
 :doctype: book
 
-This solution pattern brings an architectural solution demonstrating how easily we can deploy containerized applications on Kuberenetes cluster in Multiple clouds directly from the Github code repository of an application using GitHub Actions.
+This solution pattern brings an architectural solution demonstrating how easily we can deploy containerized applications on Kuberenetes cluster in multiple clouds directly from the Github code repository of an application using GitHub Actions.
 
-include::content-overview.adoc[]
+*Contributors*: _https://github.com/gmidha1[Gaurav Midha (Red Hat)^]_
 
 [#multi-cloud]
-== What is Multi Cloud
+== Usescases
+Multicloud is a cloud approach made up of more than 1 cloud service, from more than 1 cloud vendor—public or private. A company that uses a multi-cloud deployment incorporates multiple public clouds from more than one cloud provider. Instead of a business using one vendor for cloud hosting, storage, and the full application stack, in a multi-cloud configuration they use several.
 
-A company that uses a multi-cloud deployment incorporates multiple public clouds from more than one cloud provider. Instead of a business using one vendor for cloud hosting, storage, and the full application stack, in a multi-cloud configuration they use several.
+image::whatismulticloud.png[width=50%]
 
-A multi-cloud can also be a hybrid cloud and a hybrid cloud can also be a multi-cloud, but these terms represent two distinct concepts. "Hybrid cloud" describes the mixing of two or more distinct types of infrastructure: it combines a private cloud, an on-premises data center, or both with at least one public cloud. Multi-cloud refers to several different public clouds being deployed, and it doesn't necessarily include a private cloud although it can.
+Typical uses cases are
 
-[link=whatismulticloud.png, window="_blank"]
-image::whatismulticloud.png[width=100%]
+* *Flexibility*: No single cloud can do everything well. Organizations need different cloud tp povide for different capabilities
+* *Proximity and data sovereignty*: With cloud users who are thousands of miles away, there is a need to reduce poor response times 
+* *Data sovereignty*: With  xregulations in certain countries,  organizations need to adhere to the regulations of the country in which that data is located
+* *Failover*: Multicloud environments help protect enterprises from outages
 
-[#mgd-openshift]
-== What is Managed Openshift
+https://www.redhat.com/en/topics/cloud-computing/what-is-multicloud[Read more about Multicloud^] 
 
-* More than Kubernetes: 
-Kubernetes is a powerful orchestration engine. OpenShift delivers a complete application development, deployment and runtime platform adding features such as build pipelines, monitoring, security, service mesh, etc on top of upstream Kubernetes.
 
-* More than Software:
-Leverage our self-service dashboard and out-of-the-box optimized         configuration to get fully-managed clusters in minutes, configured to meet your needs and on your preferred public cloud.
 
-* More than “Managed”:
-Unlike other ‘managed’ services on the market, Red Hat manages the full stack not just the  Kubernetes control plane and is backed by the experience of our specialized 24x7 global SRE team.
 
-[#benefits-mgd-openshift]
-== What are the benefits of Managed Red Hat Openshift
+[#story]
+== The story behind the pattern
+{empty} +
+
+video::-wYdAp3vluM[youtube, width=800, height=480]
+
+
+Kubernetes is an open-source container orchestration engine for automating deployment, scaling and management of containerized applications. It is being used heavily for production grade applications. Kubernetes clusters are being created and used in public and private clouds. Managed Kubernetes clusters(EKS, AKS, GKE) in hyperscalers provide different integration toolsets, different dev experience (beyond kubectl), different life-cycles, different technologies (OS, kube version, mesh options), and so on. All public clouds provide their own different:
+
+* Development tools.
+* Infrastructure and application deployment approaches.
+* Networking/topologies.
+* Security configuration and compliance.
+* Training and certification.
+
+This results in multifold additional burden on the enterprises who now need to build expertise in different Development tools, Infrastructure and application deployment approaches, Networking/topologies etc. What enterprises need is a single, simple and consistent way to deploy to the multi-cloud with relative ease.
+
+Each Organization’s goals should be:
+
+* Reduce infrastructure complexity by abstracting it.
+* Get a consistent platform on any cloud infrastructure.
+* Use a SRE managed application platform.
+* Consistency - reduce developer and operations overhead.
+* Turnkey - avoid over-investing in your own platform engineering.
+* Take advantage of strong cloud partnerships through Red Hat.
+
+Red Hat has a premium managed Openshift offering in the key hyperscalers such as AWS, Azure & GCP. In this pattern, we will be demonstrating how we can use a CI/CD platform such as GitHub workflows and deploy our applications to Managed Openshift platforms running in the hyperscalers.  
+
+Consistent environments for engineers are often thought of as unattainable in multicloud architectures. Traditional application architectures tend to bring constraints and inconsistencies which inhibit a multicloud strategy. Enterperises would like to be pick and choose the right cloud for the right requirement and features, and also be able to port applications across different cloud with ease. 
+
+
+[#solution]
+== The Solution
+
+This solution pattern demonstrates how we can deploy to Multi Cloud - Openshift clusters using a CI/CD pipeline directly from GitHub itself. In the workshop, we will be deploying an application OsToy to managed Openshift clusters running in AWS, Azure and GCP.
+
+Through the power of Red Hat Openshift cloud services, portable applications can be a reality today. In the workshop, we will be deploying an application OsToy to managed OpenShift clusters running in AWS, Azure and GCP.
 
 Red Hat Openshift Managed Services reduce operational complexity allowing developers to focus on building and scaling applications that add more value to the business, go-to-market faster and get more from your cloud environment.
 
@@ -39,31 +70,3 @@ Red Hat Openshift Managed Services reduce operational complexity allowing develo
 * Increase Operational Efficiencies: Fully-managed clusters increase infrastructure and daily operations efficiency.
 * 24X7 Expert Support: 24x7 full-stack management and support from industry leading SRE team.
 * Hybrid-Cloud Deployments offer Choice & Flexibility: Only company to offer managed Kubernetes on all major public clouds.
-
-[#openshift-offerings]
-== What are Red Hat Openshift offerings:
-
-[link=openshift_offerings.png, window="_blank"]
-image::openshift_offerings.png[width=100%]
-
-[#github-actions]
-== What is GitHub Actions:
-
-GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. We can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
-
-GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or we can host your own self-hosted runners in your own data center or cloud infrastructure.
-
-Components of GitHub Actions:
-
-You can configure a GitHub Actions workflow to be triggered when an event occurs in your repository, such as a pull request being opened or an issue being created. Your workflow contains one or more jobs which can run in sequential order or in parallel. Each job will run inside its own virtual machine runner, or inside a container, and has one or more steps that either run a script that we define or run an action, which is a reusable extension that can simplify your workflow.
-
-* Workflows: A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file checked into your repository and will run when triggered by an event in your repository, or they can be triggered manually, or at a defined schedule. Workflows are defined in the .github/workflows directory in a repository, and a repository can have multiple workflows, each of which can perform a different set of tasks. For example, you can have one workflow to build and test pull requests, another workflow to deploy your application every time a release is created, and still another workflow that adds a label every time someone opens a new issue.
-* Events: An event is a specific activity in a repository that triggers a workflow run. For example, activity can originate from GitHub when someone creates a pull request, opens an issue, or pushes a commit to a repository. You can also trigger a workflow to run on a schedule, by posting to a REST API, or manually.
-* Jobs: A job is a set of steps in a workflow that is executed on the same runner. Each step is either a shell script that will be executed, or an action that will be run. Steps are executed in order and are dependent on each other. Since each step is executed on the same runner, you can share data from one step to another. For example, you can have a step that builds your application followed by a step that tests the application that was built.
-* Actions: An action is a custom application for the GitHub Actions platform that performs a complex but frequently repeated task. Use an action to help reduce the amount of repetitive code that you write in your workflow files. An action can pull your git repository from GitHub, set up the correct toolchain for your build environment, or set up the authentication to your cloud provider. You can write your own actions, or you can find actions to use in your workflows in the GitHub Marketplace.
-* Runners: A runner is a server that runs your workflows when they're triggered. Each runner can run a single job at a time. GitHub provides Ubuntu Linux, Microsoft Windows, and macOS runners to run your workflows; each workflow run executes in a fresh, newly-provisioned virtual machine.
-
-include::01-pattern.adoc[]
-
-== Explore more solution patterns
-include::https://raw.githubusercontent.com/redhat-solution-patterns/redhat-solution-patterns.github.io/master/documentation/modules/ROOT/pages/solution-pattern-list.adoc[]
