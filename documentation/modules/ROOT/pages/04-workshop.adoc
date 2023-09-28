@@ -17,17 +17,20 @@ These managed OpenShift clusters are required for the workshop:
 
 Once clusters are ready, you can move to "Delivering the workshop" part.
 
+[NOTE]
+====
 If you are a Red Hatter, you can follow the below steps to get these above clusters created. 
 
-* Login to https://demo.redhat.com/catalog and create the ROSA and ARO OpenShift clusters:
+* Login to https://demo.redhat.com/catalog[Red Hat Demo Platform^] and create the managed OpenShift clusters:
 
-- Two Red Hat Openshift Service on AWS (ROSA) clusters(one for dev and second for prod) using this link https://demo.redhat.com/catalog?search=aws&item=babylon-catalog-prod%2Fsandboxes-gpte.rosa.prod[ROSA]
-- Azure Red Hat Openshift (ARO) using this link https://demo.redhat.com/catalog?search=aro&item=babylon-catalog-prod%2Fazure-gpte.open-environment-azure-aro4.prod[ARO]
-- Openshift Dedicated on GCP by following this https://youtu.be/AI4WwSZJi9g[video].
+- Two Red Hat Openshift Service on AWS (ROSA) clusters(one for dev and second for prod) using this link https://demo.redhat.com/catalog?search=aws&item=babylon-catalog-prod%2Fsandboxes-gpte.rosa.prod[ROSA^]
+- Azure Red Hat Openshift (ARO) using this link https://demo.redhat.com/catalog?search=aro&item=babylon-catalog-prod%2Fazure-gpte.open-environment-azure-aro4.prod[ARO^]
+- Openshift Dedicated on GCP by following this https://youtu.be/AI4WwSZJi9g[video^].
+====
 
 == Delivering the workshop
 
-- Fork this repo using workshop branch: https://github.com/gmidha1/ostoy/tree/workshop[Repository link] 
+- Fork this repo using workshop branch: https://github.com/gmidha1/ostoy/tree/workshop[Repository link^] 
 - Once forked, go to your repo in Github UI and go to Settings → Security → Secrets and Variables → Actions.
 
 [link=wkshp_secrets.png, window="_blank"]
