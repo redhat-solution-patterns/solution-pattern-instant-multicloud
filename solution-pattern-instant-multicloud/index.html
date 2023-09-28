@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Solution Patterns: Instant MultiCloud - Openshift Everywhere :: Solution Patterns for Cloud Native Architectures</title>
     <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-instant-multicloud/index.html">
-    <link rel="next" href="01-pattern.html#_the_story_behind_this_solution_pattern">
+    <link rel="next" href="02-architecture.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://redhat-solution-patterns.github.io/" target="_blank"><img
+      <a class="navbar-item" href="https://redhat.com" target="_blank"><img
           src="../_/img/logo.png" height="40px" alt="Cloud Native Architecture Solution Patterns"></a>
       <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-solution-patterns.github.io/solution-patterns">Solution Patterns for Cloud Native Architectures</a>
       <button class="navbar-burger" data-target="topbar-nav">
@@ -27,12 +27,12 @@
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
 
-
+       
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Solution Patterns</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://red.ht/enhance-with-cdc">Adopt Change Data Capture for <br/>stack modernization</a>
-            <a class="navbar-item" href="https://red.ht/enhance-with-eda">Enhancing Applications with Application Services</a>
+            <a class="navbar-item" href="#">Adopt Change Data Capture for <br/>stack modernization</a>
+            <a class="navbar-item" href="#">Edge-to-Cloud Pipelines</a>     <a class="navbar-item" href="#">Event driven architecture</a>
           </div>
         </div>
 
@@ -45,6 +45,7 @@
         </div>
 
         <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/middleware">Red Hat Application Services</a>
+
         <a class="navbar-item" target="_blank" href="https://developers.redhat.com/middleware">Learn more</a>
 
       </div>
@@ -66,31 +67,13 @@
     <a class="nav-link" href="index.html">1. Home page</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#multi-cloud">1.1 What is Multi Cloud</a>
+    <a class="nav-link" href="#multi-cloud">1.1 Usecases</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#mgd-openshift">1.2 What is Managed Openshift</a>
+    <a class="nav-link" href="#story">1.2 The story behind the pattern</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#benefits-mgd-openshift">1.3 What are the benefits of Managed Red Hat Openshift</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#openshift-offerings">1.4 What are Red Hat Openshift offerings</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#github-actions">1.5 What is GitHub Actions</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="01-pattern.html#_the_story_behind_this_solution_pattern">1.6 The story behind this solution pattern</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="01-pattern.html#_the_solution">1.7 The solution</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_content_overview">1.8 Content Overview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_content_overview">1.9 Explore more solution patterns</a>
+    <a class="nav-link" href="#solution">1.3 The solution</a>
   </li>
 </ul>
   </li>
@@ -100,6 +83,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="02-architecture.html#in_depth">2.1. An in-depth look at the solution&#8217;s architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-architecture.html#_more_about_the_technology_stack">2.2. More about the technology stack</a>
   </li>
 </ul>
   </li>
@@ -120,12 +106,15 @@
     <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.2. Delivering the workshop</a>
+    <a class="nav-link" href="04-workshop.html#_delivering_the_workshop">4.2. Delivering the workshop</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="https://redhat-solution-patterns.github.io/">5. Other Red Hat Solution Patterns</a>
+    <a class="nav-link" href="05-developer-resources.html">5. Developer Resources</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text"><a href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank" rel="noopener">6. Other Red Hat Solution Patterns</a></span>
   </li>
 </ul>
   </li>
@@ -169,169 +158,59 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This solution pattern brings an architectural solution demonstrating how easily we can deploy containerized applications on Kuberenetes cluster in Multiple clouds directly from the Github code repository of an application using GitHub Actions.</p>
+<p>This solution pattern brings an architectural solution demonstrating how easily we can deploy containerized applications on Kuberenetes cluster in multiple clouds directly from the Github code repository of an application using GitHub Actions.</p>
 </div>
-<h2 id="_content_overview" class="discrete">Content overview</h2>
-<div class="tabset is-loading">
-<div class="ulist tabs">
-<ul>
-<li>
-<p><a id="tabset1_a-href-1-solution-pattern-a"></a><a href="#">1. Solution Pattern</a></p>
-</li>
-<li>
-<p><a id="tabset1_a-href-02-architecture-html-class-xref-page-2-architecture-a"></a><a href="02-architecture.html" class="xref page">2. Architecture</a></p>
-</li>
-<li>
-<p><a id="tabset1_a-href-03-demo-html-class-xref-page-3-demonstration-a"></a><a href="03-demo.html" class="xref page">3. Demonstration</a></p>
-</li>
-<li>
-<p><a id="tabset1_a-href-04-workshop-html-class-xref-page-4-workshop-a"></a><a href="04-workshop.html" class="xref page">4. Workshop</a></p>
-</li>
-</ul>
-</div>
-<div class="content">
-<div class="tab-pane" aria-labelledby="tabset1_a-href-1-solution-pattern-a">
 <div class="paragraph">
-<p><a href="#multi-cloud">1. What is Multi Cloud</a><br>
-<a href="#mgd-openshift">2. What is Managed Openshift</a><br>
-<a href="#benefits-mgd-openshift">3. What are the benefits of Managed Red Hat Openshift</a><br>
-<a href="#openshift-offerings">4. What are Red Hat Openshift offerings</a><br>
-<a href="#github-actions">5. What is GitHub Actions</a><br>
-<a href="01-pattern.html#_the_story_behind_this_solution_pattern" class="xref page">6. The story behind this solution pattern</a><br>
-<a href="01-pattern.html#_the_solution" class="xref page">7. The solution</a><br>
-<a href="#_explore_more_solution_patterns">8. Explore more solution patterns</a></p>
-</div>
-</div>
-<div class="tab-pane" aria-labelledby="tabset1_a-href-02-architecture-html-class-xref-page-2-architecture-a">
-<div class="paragraph">
-<p><a href="02-architecture.html#in_depth" class="xref page">1. An in-depth look at the solution&#8217;s architecture</a><br></p>
-</div>
-</div>
-<div class="tab-pane" aria-labelledby="tabset1_a-href-03-demo-html-class-xref-page-3-demonstration-a">
-<div class="paragraph">
-<p><a href="03-demo.html#_demonstration" class="xref page">1. Demonstration</a><br></p>
-</div>
-</div>
-<div class="tab-pane" aria-labelledby="tabset1_a-href-04-workshop-html-class-xref-page-4-workshop-a">
-<div class="paragraph">
-<p><a href="04-workshop.html#_installing_the_workshop_environment" class="xref page">1. Installing the workshop environment</a><br>
-<a href="04-workshop.html#_delivering_the_workshop" class="xref page">2. Delivering the workshop</a></p>
-</div>
-</div>
-</div>
+<p><strong>Contributors</strong>: <em><a href="https://github.com/gmidha1" target="_blank" rel="noopener">Gaurav Midha (Red Hat)</a></em></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="multi-cloud"><a class="anchor" href="#multi-cloud"></a><a class="link" href="#multi-cloud">1. What is Multi Cloud</a></h2>
+<h2 id="multi-cloud"><a class="anchor" href="#multi-cloud"></a><a class="link" href="#multi-cloud">1. Usescases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A company that uses a multi-cloud deployment incorporates multiple public clouds from more than one cloud provider. Instead of a business using one vendor for cloud hosting, storage, and the full application stack, in a multi-cloud configuration they use several.</p>
-</div>
-<div class="paragraph">
-<p>A multi-cloud can also be a hybrid cloud and a hybrid cloud can also be a multi-cloud, but these terms represent two distinct concepts. "Hybrid cloud" describes the mixing of two or more distinct types of infrastructure: it combines a private cloud, an on-premises data center, or both with at least one public cloud. Multi-cloud refers to several different public clouds being deployed, and it doesn&#8217;t necessarily include a private cloud although it can.</p>
+<p>Multicloud is a cloud approach made up of more than 1 cloud service, from more than 1 cloud vendor—public or private. A company that uses a multi-cloud deployment incorporates multiple public clouds from more than one cloud provider. Instead of a business using one vendor for cloud hosting, storage, and the full application stack, in a multi-cloud configuration they use several.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="whatismulticloud.png" target="_blank" rel="noopener"><img src="_images/whatismulticloud.png" alt="whatismulticloud" width="100%"></a>
+<img src="_images/whatismulticloud.png" alt="whatismulticloud" width="50%">
 </div>
 </div>
+<div class="paragraph">
+<p>Typical uses cases are</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="mgd-openshift"><a class="anchor" href="#mgd-openshift"></a><a class="link" href="#mgd-openshift">2. What is Managed Openshift</a></h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>More than Kubernetes:
-Kubernetes is a powerful orchestration engine. OpenShift delivers a complete application development, deployment and runtime platform adding features such as build pipelines, monitoring, security, service mesh, etc on top of upstream Kubernetes.</p>
+<p><strong>Flexibility</strong>: No single cloud can do everything well. Organizations need different cloud tp povide for different capabilities</p>
 </li>
 <li>
-<p>More than Software:
-Leverage our self-service dashboard and out-of-the-box optimized         configuration to get fully-managed clusters in minutes, configured to meet your needs and on your preferred public cloud.</p>
+<p><strong>Proximity and data sovereignty</strong>: With cloud users who are thousands of miles away, there is a need to reduce poor response times</p>
 </li>
 <li>
-<p>More than “Managed”:
-Unlike other ‘managed’ services on the market, Red Hat manages the full stack not just the  Kubernetes control plane and is backed by the experience of our specialized 24x7 global SRE team.</p>
+<p><strong>Data sovereignty</strong>: With  xregulations in certain countries,  organizations need to adhere to the regulations of the country in which that data is located</p>
+</li>
+<li>
+<p><strong>Failover</strong>: Multicloud environments help protect enterprises from outages</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><a href="https://www.redhat.com/en/topics/cloud-computing/what-is-multicloud" target="_blank" rel="noopener">Read more about Multicloud</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="benefits-mgd-openshift"><a class="anchor" href="#benefits-mgd-openshift"></a><a class="link" href="#benefits-mgd-openshift">3. What are the benefits of Managed Red Hat Openshift</a></h2>
+<h2 id="story"><a class="anchor" href="#story"></a><a class="link" href="#story">2. The story behind the pattern</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red Hat Openshift Managed Services reduce operational complexity allowing developers to focus on building and scaling applications that add more value to the business, go-to-market faster and get more from your cloud environment.</p>
+<p><br></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Faster time to value: Fully-managed clusters increase developer productivity. Developers focus on value-add applications.</p>
-</li>
-<li>
-<p>Increase Operational Efficiencies: Fully-managed clusters increase infrastructure and daily operations efficiency.</p>
-</li>
-<li>
-<p>24X7 Expert Support: 24x7 full-stack management and support from industry leading SRE team.</p>
-</li>
-<li>
-<p>Hybrid-Cloud Deployments offer Choice &amp; Flexibility: Only company to offer managed Kubernetes on all major public clouds.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="openshift-offerings"><a class="anchor" href="#openshift-offerings"></a><a class="link" href="#openshift-offerings">4. What are Red Hat Openshift offerings:</a></h2>
-<div class="sectionbody">
-<div class="imageblock">
+<div class="videoblock">
 <div class="content">
-<a class="image" href="openshift_offerings.png" target="_blank" rel="noopener"><img src="_images/openshift_offerings.png" alt="openshift offerings" width="100%"></a>
+<iframe width="800" height="480" src="https://www.youtube.com/embed/-wYdAp3vluM?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="github-actions"><a class="anchor" href="#github-actions"></a><a class="link" href="#github-actions">5. What is GitHub Actions:</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. We can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.</p>
-</div>
-<div class="paragraph">
-<p>GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or we can host your own self-hosted runners in your own data center or cloud infrastructure.</p>
-</div>
-<div class="paragraph">
-<p>Components of GitHub Actions:</p>
-</div>
-<div class="paragraph">
-<p>You can configure a GitHub Actions workflow to be triggered when an event occurs in your repository, such as a pull request being opened or an issue being created. Your workflow contains one or more jobs which can run in sequential order or in parallel. Each job will run inside its own virtual machine runner, or inside a container, and has one or more steps that either run a script that we define or run an action, which is a reusable extension that can simplify your workflow.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Workflows: A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file checked into your repository and will run when triggered by an event in your repository, or they can be triggered manually, or at a defined schedule. Workflows are defined in the .github/workflows directory in a repository, and a repository can have multiple workflows, each of which can perform a different set of tasks. For example, you can have one workflow to build and test pull requests, another workflow to deploy your application every time a release is created, and still another workflow that adds a label every time someone opens a new issue.</p>
-</li>
-<li>
-<p>Events: An event is a specific activity in a repository that triggers a workflow run. For example, activity can originate from GitHub when someone creates a pull request, opens an issue, or pushes a commit to a repository. You can also trigger a workflow to run on a schedule, by posting to a REST API, or manually.</p>
-</li>
-<li>
-<p>Jobs: A job is a set of steps in a workflow that is executed on the same runner. Each step is either a shell script that will be executed, or an action that will be run. Steps are executed in order and are dependent on each other. Since each step is executed on the same runner, you can share data from one step to another. For example, you can have a step that builds your application followed by a step that tests the application that was built.</p>
-</li>
-<li>
-<p>Actions: An action is a custom application for the GitHub Actions platform that performs a complex but frequently repeated task. Use an action to help reduce the amount of repetitive code that you write in your workflow files. An action can pull your git repository from GitHub, set up the correct toolchain for your build environment, or set up the authentication to your cloud provider. You can write your own actions, or you can find actions to use in your workflows in the GitHub Marketplace.</p>
-</li>
-<li>
-<p>Runners: A runner is a server that runs your workflows when they&#8217;re triggered. Each runner can run a single job at a time. GitHub provides Ubuntu Linux, Microsoft Windows, and macOS runners to run your workflows; each workflow run executes in a fresh, newly-provisioned virtual machine.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_the_story_behind_this_solution_pattern"><a class="anchor" href="#_the_story_behind_this_solution_pattern"></a><a class="link" href="#_the_story_behind_this_solution_pattern">6. The story behind this solution pattern</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Kubernetes is an open-source container orchestration engine for automating deployment, scaling and management of containerized applications. It is being used heavily for production grade applications. Kubernetes clusters are being created and used in public and private clouds. Managed Kubernetes clusters(EKS, AKS, GKE) in hyperscalers provide different integration toolsets, different dev experience (beyond kubectl), different life-cycles, different technologies (OS, kube version, mesh options), and so on. All public clouds provide their own different:</p>
 </div>
@@ -353,6 +232,9 @@ Unlike other ‘managed’ services on the market, Red Hat manages the full stac
 <p>Training and certification.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>This results in multifold additional burden on the enterprises who now need to build expertise in different Development tools, Infrastructure and application deployment approaches, Networking/topologies etc. What enterprises need is a single, simple and consistent way to deploy to the multi-cloud with relative ease.</p>
 </div>
 <div class="paragraph">
 <p>Each Organization’s goals should be:</p>
@@ -382,76 +264,43 @@ Unlike other ‘managed’ services on the market, Red Hat manages the full stac
 <div class="paragraph">
 <p>Red Hat has a premium managed Openshift offering in the key hyperscalers such as AWS, Azure &amp; GCP. In this pattern, we will be demonstrating how we can use a CI/CD platform such as GitHub workflows and deploy our applications to Managed Openshift platforms running in the hyperscalers.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_the_solution"><a class="anchor" href="#_the_solution"></a><a class="link" href="#_the_solution">7. The Solution</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>This solution pattern demonstrates how we can deploy to Multi Cloud - Openshift clusters using a CI/CD pipeline directly from GitHub itself. In the workshop, we will be deploying an application OsToy to managed openshift clusters running in AWS, Azure and GCP.</p>
+<p>Consistent environments for engineers are often thought of as unattainable in multicloud architectures. Traditional application architectures tend to bring constraints and inconsistencies which inhibit a multicloud strategy. Enterperises would like to be pick and choose the right cloud for the right requirement and features, and also be able to port applications across different cloud with ease.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_explore_more_solution_patterns"><a class="anchor" href="#_explore_more_solution_patterns"></a><a class="link" href="#_explore_more_solution_patterns">8. Explore more solution patterns</a></h2>
+<h2 id="solution"><a class="anchor" href="#solution"></a><a class="link" href="#solution">3. The Solution</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>It&#8217;s time to boost your cloud-native application architectural design with bleeding-edge technology backed by open-source software. Explore the use cases and learn recommended solutions for each of these challenges:</p>
+<p>This solution pattern demonstrates how we can deploy to Multi Cloud - Openshift clusters using a CI/CD pipeline directly from GitHub itself. In the workshop, we will be deploying an application OsToy to managed Openshift clusters running in AWS, Azure and GCP.</p>
+</div>
+<div class="paragraph">
+<p>Through the power of Red Hat Openshift cloud services, portable applications can be a reality today. In the workshop, we will be deploying an application OsToy to managed OpenShift clusters running in AWS, Azure and GCP.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat Openshift Managed Services reduce operational complexity allowing developers to focus on building and scaling applications that add more value to the business, go-to-market faster and get more from your cloud environment.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Application Modernization</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://redhat-solution-patterns.github.io/solution-pattern-modernization-cdc/">Adopting Change Data Capture for stack modernization</a></p>
+<p>Faster time to value: Fully-managed clusters increase developer productivity. Developers focus on value-add applications.</p>
 </li>
 <li>
-<p><a href="https://redhat-solution-patterns.github.io/solution-pattern-enhancing-applications">Enhancing Applications with Application Services</a></p>
+<p>Increase Operational Efficiencies: Fully-managed clusters increase infrastructure and daily operations efficiency.</p>
 </li>
 <li>
-<p><a href="https://redhat-solution-patterns.github.io/solution-pattern-apim-servicemesh/comprehensive-service-architecture">Comprehensive Service Architecture with API Management and Service Mesh</a></p>
-</li>
-</ul>
-</div>
+<p>24X7 Expert Support: 24x7 full-stack management and support from industry leading SRE team.</p>
 </li>
 <li>
-<p>DevOps</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://redhat-solution-patterns.github.io/solution-pattern-multicloud-gitops-odf/">MultiCloud GitOps with ArgoCD, OpenShift Advanced Cluster Management and OpenShift Data Foundation</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Managed Openshift</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://redhat-solution-patterns.github.io/solution-pattern-modernize-with-rosa/solution-pattern-rosa/index.html">Accelerate time to value with Red Hat Openshift Service on AWS</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Intelligent Applications</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://redhat-solution-patterns.github.io/solution-pattern-sentiment-analysis">Building Sentiment Analysis with AIML and Kafka</a></p>
-</li>
-</ul>
-</div>
+<p>Hybrid-Cloud Deployments offer Choice &amp; Flexibility: Only company to offer managed Kubernetes on all major public clouds.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="01-pattern.html#_the_story_behind_this_solution_pattern" class="query-params-link">1.6 The story behind this solution pattern</a></span>
+  <span class="next"><a href="02-architecture.html" class="query-params-link">2. Architecture</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

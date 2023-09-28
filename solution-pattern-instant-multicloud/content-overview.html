@@ -14,7 +14,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://redhat-solution-patterns.github.io/" target="_blank"><img
+      <a class="navbar-item" href="https://redhat.com" target="_blank"><img
           src="../_/img/logo.png" height="40px" alt="Cloud Native Architecture Solution Patterns"></a>
       <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-solution-patterns.github.io/solution-patterns">Solution Patterns for Cloud Native Architectures</a>
       <button class="navbar-burger" data-target="topbar-nav">
@@ -26,12 +26,12 @@
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
 
-
+       
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Solution Patterns</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://red.ht/enhance-with-cdc">Adopt Change Data Capture for <br/>stack modernization</a>
-            <a class="navbar-item" href="https://red.ht/enhance-with-eda">Enhancing Applications with Application Services</a>
+            <a class="navbar-item" href="#">Adopt Change Data Capture for <br/>stack modernization</a>
+            <a class="navbar-item" href="#">Edge-to-Cloud Pipelines</a>     <a class="navbar-item" href="#">Event driven architecture</a>
           </div>
         </div>
 
@@ -44,6 +44,7 @@
         </div>
 
         <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/middleware">Red Hat Application Services</a>
+
         <a class="navbar-item" target="_blank" href="https://developers.redhat.com/middleware">Learn more</a>
 
       </div>
@@ -65,31 +66,13 @@
     <a class="nav-link" href="index.html">1. Home page</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#multi-cloud">1.1 What is Multi Cloud</a>
+    <a class="nav-link" href="index.html#multi-cloud">1.1 Usecases</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#mgd-openshift">1.2 What is Managed Openshift</a>
+    <a class="nav-link" href="index.html#story">1.2 The story behind the pattern</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#benefits-mgd-openshift">1.3 What are the benefits of Managed Red Hat Openshift</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#openshift-offerings">1.4 What are Red Hat Openshift offerings</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#github-actions">1.5 What is GitHub Actions</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="01-pattern.html#_the_story_behind_this_solution_pattern">1.6 The story behind this solution pattern</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="01-pattern.html#_the_solution">1.7 The solution</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#_content_overview">1.8 Content Overview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#_content_overview">1.9 Explore more solution patterns</a>
+    <a class="nav-link" href="index.html#solution">1.3 The solution</a>
   </li>
 </ul>
   </li>
@@ -99,6 +82,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="02-architecture.html#in_depth">2.1. An in-depth look at the solution&#8217;s architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-architecture.html#_more_about_the_technology_stack">2.2. More about the technology stack</a>
   </li>
 </ul>
   </li>
@@ -119,12 +105,15 @@
     <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.2. Delivering the workshop</a>
+    <a class="nav-link" href="04-workshop.html#_delivering_the_workshop">4.2. Delivering the workshop</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="https://redhat-solution-patterns.github.io/">5. Other Red Hat Solution Patterns</a>
+    <a class="nav-link" href="05-developer-resources.html">5. Developer Resources</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text"><a href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank" rel="noopener">6. Other Red Hat Solution Patterns</a></span>
   </li>
 </ul>
   </li>
@@ -173,9 +162,6 @@
 <li>
 <p><a id="tabset1_a-href-03-demo-html-class-xref-page-3-demonstration-a"></a><a href="03-demo.html" class="xref page">3. Demonstration</a></p>
 </li>
-<li>
-<p><a id="tabset1_a-href-04-workshop-html-class-xref-page-4-workshop-a"></a><a href="04-workshop.html" class="xref page">4. Workshop</a></p>
-</li>
 </ul>
 </div>
 <div class="content">
@@ -186,8 +172,8 @@
 <a href="index.html#benefits-mgd-openshift" class="xref page">3. What are the benefits of Managed Red Hat Openshift</a><br>
 <a href="index.html#openshift-offerings" class="xref page">4. What are Red Hat Openshift offerings</a><br>
 <a href="index.html#github-actions" class="xref page">5. What is GitHub Actions</a><br>
-<a href="01-pattern.html#_the_story_behind_this_solution_pattern" class="xref page">6. The story behind this solution pattern</a><br>
-<a href="01-pattern.html#_the_solution" class="xref page">7. The solution</a><br>
+<a href="index.html#_the_story_behind_this_solution_pattern" class="xref page">6. The story behind this solution pattern</a><br>
+<a href="index.html#_the_solution" class="xref page">7. The solution</a><br>
 <a href="index.html#_explore_more_solution_patterns" class="xref page">8. Explore more solution patterns</a></p>
 </div>
 </div>
@@ -199,12 +185,6 @@
 <div class="tab-pane" aria-labelledby="tabset1_a-href-03-demo-html-class-xref-page-3-demonstration-a">
 <div class="paragraph">
 <p><a href="03-demo.html#_demonstration" class="xref page">1. Demonstration</a><br></p>
-</div>
-</div>
-<div class="tab-pane" aria-labelledby="tabset1_a-href-04-workshop-html-class-xref-page-4-workshop-a">
-<div class="paragraph">
-<p><a href="04-workshop.html#_installing_the_workshop_environment" class="xref page">1. Installing the workshop environment</a><br>
-<a href="04-workshop.html#_delivering_the_workshop" class="xref page">2. Delivering the workshop</a></p>
 </div>
 </div>
 </div>

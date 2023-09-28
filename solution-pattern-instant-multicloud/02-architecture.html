@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Solution Pattern: Name Template :: Solution Patterns for Cloud Native Architectures</title>
+    <title>Solution Pattern: Instant Multi Cloud :: Solution Patterns for Cloud Native Architectures</title>
     <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-instant-multicloud/02-architecture.html">
-    <link rel="prev" href="index.html#_content_overview">
+    <link rel="prev" href="index.html">
     <link rel="next" href="03-demo.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
@@ -16,7 +16,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://redhat-solution-patterns.github.io/" target="_blank"><img
+      <a class="navbar-item" href="https://redhat.com" target="_blank"><img
           src="../_/img/logo.png" height="40px" alt="Cloud Native Architecture Solution Patterns"></a>
       <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-solution-patterns.github.io/solution-patterns">Solution Patterns for Cloud Native Architectures</a>
       <button class="navbar-burger" data-target="topbar-nav">
@@ -28,12 +28,12 @@
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
 
-
+       
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Solution Patterns</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://red.ht/enhance-with-cdc">Adopt Change Data Capture for <br/>stack modernization</a>
-            <a class="navbar-item" href="https://red.ht/enhance-with-eda">Enhancing Applications with Application Services</a>
+            <a class="navbar-item" href="#">Adopt Change Data Capture for <br/>stack modernization</a>
+            <a class="navbar-item" href="#">Edge-to-Cloud Pipelines</a>     <a class="navbar-item" href="#">Event driven architecture</a>
           </div>
         </div>
 
@@ -46,6 +46,7 @@
         </div>
 
         <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/middleware">Red Hat Application Services</a>
+
         <a class="navbar-item" target="_blank" href="https://developers.redhat.com/middleware">Learn more</a>
 
       </div>
@@ -67,31 +68,13 @@
     <a class="nav-link" href="index.html">1. Home page</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#multi-cloud">1.1 What is Multi Cloud</a>
+    <a class="nav-link" href="index.html#multi-cloud">1.1 Usecases</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#mgd-openshift">1.2 What is Managed Openshift</a>
+    <a class="nav-link" href="index.html#story">1.2 The story behind the pattern</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#benefits-mgd-openshift">1.3 What are the benefits of Managed Red Hat Openshift</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#openshift-offerings">1.4 What are Red Hat Openshift offerings</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#github-actions">1.5 What is GitHub Actions</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="01-pattern.html#_the_story_behind_this_solution_pattern">1.6 The story behind this solution pattern</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="01-pattern.html#_the_solution">1.7 The solution</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#_content_overview">1.8 Content Overview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#_content_overview">1.9 Explore more solution patterns</a>
+    <a class="nav-link" href="index.html#solution">1.3 The solution</a>
   </li>
 </ul>
   </li>
@@ -101,6 +84,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#in_depth">2.1. An in-depth look at the solution&#8217;s architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#_more_about_the_technology_stack">2.2. More about the technology stack</a>
   </li>
 </ul>
   </li>
@@ -121,12 +107,15 @@
     <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.2. Delivering the workshop</a>
+    <a class="nav-link" href="04-workshop.html#_delivering_the_workshop">4.2. Delivering the workshop</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="https://redhat-solution-patterns.github.io/">5. Other Red Hat Solution Patterns</a>
+    <a class="nav-link" href="05-developer-resources.html">5. Developer Resources</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text"><a href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank" rel="noopener">6. Other Red Hat Solution Patterns</a></span>
   </li>
 </ul>
   </li>
@@ -166,7 +155,7 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Solution Pattern: Name Template</h1>
+<h1 class="page">Solution Pattern: Instant Multi Cloud</h1>
 <h1 id="_architecture" class="sect0"><a class="anchor" href="#_architecture"></a><a class="link" href="#_architecture">Architecture</a></h1>
 <div class="sect1">
 <h2 id="in_depth"><a class="anchor" href="#in_depth"></a><a class="link" href="#in_depth">1. An in-depth look at the solution&#8217;s architecture</a></h2>
@@ -192,13 +181,79 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="arch_diagram.png" target="_blank" rel="noopener"><img src="_images/arch_diagram.png" alt="arch diagram" width="100%"></a>
+<a class="image" href="arch_diagram.png" target="_blank" rel="noopener"><img src="_images/arch_diagram.png" alt="arch diagram" width="80%"></a>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_more_about_the_technology_stack"><a class="anchor" href="#_more_about_the_technology_stack"></a><a class="link" href="#_more_about_the_technology_stack">2. More about the technology stack</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="mgd-openshift"><a class="anchor" href="#mgd-openshift"></a><a class="link" href="#mgd-openshift">2.1. What is Managed Openshift</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>More than Kubernetes:
+Kubernetes is a powerful orchestration engine. OpenShift delivers a complete application development, deployment and runtime platform adding features such as build pipelines, monitoring, security, service mesh, etc on top of upstream Kubernetes.</p>
+</li>
+<li>
+<p>More than Software:
+Leverage our self-service dashboard and out-of-the-box optimized         configuration to get fully-managed clusters in minutes, configured to meet your needs and on your preferred public cloud.</p>
+</li>
+<li>
+<p>More than “Managed”:
+Unlike other ‘managed’ services on the market, Red Hat manages the full stack not just the  Kubernetes control plane and is backed by the experience of our specialized 24x7 global SRE team.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="openshift-offerings"><a class="anchor" href="#openshift-offerings"></a><a class="link" href="#openshift-offerings">2.2. What are Red Hat Openshift offerings:</a></h3>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="openshift_offerings.png" target="_blank" rel="noopener"><img src="_images/openshift_offerings.png" alt="openshift offerings" width="100%"></a>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="github-actions"><a class="anchor" href="#github-actions"></a><a class="link" href="#github-actions">2.3. What is GitHub Actions:</a></h3>
+<div class="paragraph">
+<p>GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. We can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.</p>
+</div>
+<div class="paragraph">
+<p>GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or we can host your own self-hosted runners in your own data center or cloud infrastructure.</p>
+</div>
+<div class="paragraph">
+<p><strong>Components of GitHub Actions:</strong></p>
+</div>
+<div class="paragraph">
+<p>You can configure a GitHub Actions workflow to be triggered when an event occurs in your repository, such as a pull request being opened or an issue being created. Your workflow contains one or more jobs which can run in sequential order or in parallel. Each job will run inside its own virtual machine runner, or inside a container, and has one or more steps that either run a script that we define or run an action, which is a reusable extension that can simplify your workflow.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Workflows: A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file checked into your repository and will run when triggered by an event in your repository, or they can be triggered manually, or at a defined schedule. Workflows are defined in the .github/workflows directory in a repository, and a repository can have multiple workflows, each of which can perform a different set of tasks. For example, you can have one workflow to build and test pull requests, another workflow to deploy your application every time a release is created, and still another workflow that adds a label every time someone opens a new issue.</p>
+</li>
+<li>
+<p>Events: An event is a specific activity in a repository that triggers a workflow run. For example, activity can originate from GitHub when someone creates a pull request, opens an issue, or pushes a commit to a repository. You can also trigger a workflow to run on a schedule, by posting to a REST API, or manually.</p>
+</li>
+<li>
+<p>Jobs: A job is a set of steps in a workflow that is executed on the same runner. Each step is either a shell script that will be executed, or an action that will be run. Steps are executed in order and are dependent on each other. Since each step is executed on the same runner, you can share data from one step to another. For example, you can have a step that builds your application followed by a step that tests the application that was built.</p>
+</li>
+<li>
+<p>Actions: An action is a custom application for the GitHub Actions platform that performs a complex but frequently repeated task. Use an action to help reduce the amount of repetitive code that you write in your workflow files. An action can pull your git repository from GitHub, set up the correct toolchain for your build environment, or set up the authentication to your cloud provider. You can write your own actions, or you can find actions to use in your workflows in the GitHub Marketplace.</p>
+</li>
+<li>
+<p>Runners: A runner is a server that runs your workflows when they&#8217;re triggered. Each runner can run a single job at a time. GitHub provides Ubuntu Linux, Microsoft Windows, and macOS runners to run your workflows; each workflow run executes in a fresh, newly-provisioned virtual machine.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="index.html#_content_overview" class="query-params-link">1.8 Content Overview</a></span>
+  <span class="prev"><a href="index.html" class="query-params-link">1. Home page</a></span>
   <span class="next"><a href="03-demo.html" class="query-params-link">3. See the Solution in Action</a></span>
 </nav>
 </article>
