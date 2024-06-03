@@ -26,6 +26,17 @@ https://www.redhat.com/en/topics/cloud-computing/what-is-multicloud[Read more ab
 
 
 
+++++
+<style>
+@media screen and (max-width:767px) {
+iframe[src*="youtube"] {
+    width: 100% !important;
+}
+}
+</style>
+++++
+
+
 [#story]
 == The story behind the pattern
 {empty} +
